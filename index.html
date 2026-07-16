@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🍺 Beer Me</title>
+    <title>Beer Me</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
 
-    <div class="logo">🍺</div>
-
-    <h1>BEER ME</h1>
-
-    <p class="tagline">
-        One tap.<br>
-        One beer.<br>
-        One destination.
-    </p>
-
-    <button id="beerBtn">
+    <button id="beerBtn" class="beer-button">
         BEER ME
     </button>
 
+    <p class="tagline">
+        Because the best beer is the one nearby.
+    </p>
+
     <div id="loading" class="hidden">
-
         <div class="spinner"></div>
-
         <p>Finding beer...</p>
-
     </div>
 
     <div id="result" class="hidden">
@@ -42,7 +32,7 @@
 
         <div class="beerCard">
 
-            <h3>🍺 Recommended Beer</h3>
+            <h3>Recommended Beer</h3>
 
             <p id="beerName"></p>
 
@@ -59,11 +49,11 @@
             </button>
 
             <button id="differentPlaceBtn">
-                🚗 Somewhere Else
+                📍 Somewhere Else
             </button>
 
             <button id="directionsBtn">
-                📍 Directions
+                🗺️ Directions
             </button>
 
         </div>
