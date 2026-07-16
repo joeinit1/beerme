@@ -19,8 +19,8 @@ body {
 
 .beer-button {
     width: 100%;
-    padding: 45px;
-    font-size: 64px;
+    padding: 32px 20px;
+    font-size: clamp(38px, 12vw, 64px);
     font-weight: bold;
     border: 4px solid #C47A3A;
     border-radius: 20px;
@@ -29,7 +29,9 @@ body {
     background: #183A34;
     color: #F4EBDD;
 
+    white-space: nowrap;
     transition: 0.2s;
+}
 }
 
 .beer-button:hover {
