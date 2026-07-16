@@ -37,8 +37,8 @@ const beerSpots = [
         longitude: -70.3184,
         beers: [
             "Contee Kölsch",
-            "Try one of their hazy Maine IPAs",
-            "Try one of their fruit-forward sours"
+            "Try a hazy Maine IPA",
+            "Try a fruit-forward sour"
         ]
     },
     {
