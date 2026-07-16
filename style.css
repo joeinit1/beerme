@@ -85,7 +85,7 @@ body {
 #beerName {
     font-size: clamp(38px, 10vw, 64px);
     font-weight: 900;
-    color: #D68A45;
+    color: #F4EBDD;
     margin: 12px 0 28px;
     line-height: 1.1;
 }
