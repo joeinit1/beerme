@@ -27,7 +27,14 @@ const beerSpots = [
         beers: [
             "Allagash White",
             "Allagash Tripel",
-            "Allagash Hazy IPA"
+            "Allagash Hazy IPA",
+            "Curieux",
+            "Allagash Lager",
+            "North Sky",
+            "Honey Saison",
+            "Saison",
+            "Maine Blueberry Ale",
+            "Clementine Kölsch"
         ]
     },
     {
@@ -38,7 +45,10 @@ const beerSpots = [
         beers: [
             "Contee Kölsch",
             "Try a hazy Maine IPA",
-            "Try a fruit-forward sour"
+            "Try a double-fruited sour",
+            "Try a crispy lager",
+            "Try a pastry stout",
+            "Ask for the new release"
         ]
     },
     {
@@ -48,6 +58,11 @@ const beerSpots = [
         longitude: -70.3207,
         beers: [
             "Epiphany",
+            "Raspberry's My Jam",
+            "Fetch",
+            "Vienna Lager",
+            "Forest City",
+            "Tailwind IPA",
             "Afterglow",
             "Riverton Flyer"
         ]
@@ -60,7 +75,10 @@ const beerSpots = [
         beers: [
             "Patina",
             "Paseo",
-            "Austin Street Lager"
+            "Austin Street Lager",
+            "Try the house IPA",
+            "Try a seasonal sour",
+            "Ask for the new release"
         ]
     }
 ];
