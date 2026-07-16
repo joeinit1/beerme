@@ -168,6 +168,8 @@ function showCurrentRecommendation() {
 
     beerName.textContent =
         currentSpot.beers[currentBeerIndex];
+    
+    requestAnimationFrame(fitBeerName);
 }
 
 function showDifferentBeer() {
@@ -256,4 +258,21 @@ function calculateDistanceMiles(lat1, lon1, lat2, lon2) {
 
 function degreesToRadians(degrees) {
     return degrees * (Math.PI / 180);
+}
+function fitBeerName() {
+    // Reset to the normal CSS size before measuring
+    beerName.style.fontSize = "";
+
+    let fontSize =
+        parseFloat(window.getComputedStyle(beerName).fontSize);
+
+    const minimumFontSize = 24;
+
+    while (
+        beerName.scrollWidth > beerName.clientWidth &&
+        fontSize > minimumFontSize
+    ) {
+        fontSize -= 1;
+        beerName.style.fontSize = `${fontSize}px`;
+    }
 }
