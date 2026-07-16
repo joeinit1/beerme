@@ -227,11 +227,14 @@ function openDirections() {
         return;
     }
 
-    const mapsUrl =
-        "https://www.google.com/maps/dir/?api=1" +
-        `&destination=${currentSpot.latitude},${currentSpot.longitude}`;
+    const destination = encodeURIComponent(
+        `${currentSpot.name}, ${currentSpot.address}`
+    );
 
-    window.open(mapsUrl, "_blank");
+    const mapsUrl =
+        `https://www.google.com/maps/dir/?api=1&destination=${destination}`;
+
+    window.open(mapsUrl, "_blank", "noopener");
 }
 
 /*
