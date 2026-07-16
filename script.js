@@ -7,7 +7,6 @@ const breweryName = document.getElementById("breweryName");
 const distance = document.getElementById("distance");
 const beerName = document.getElementById("beerName");
 
-const againButton = document.getElementById("againBtn");
 const differentBeerButton = document.getElementById("differentBeerBtn");
 const differentPlaceButton = document.getElementById("differentPlaceBtn");
 const directionsButton = document.getElementById("directionsBtn");
@@ -91,7 +90,6 @@ let currentPlaceIndex = 0;
 let currentBeerIndex = 0;
 
 beerButton.addEventListener("click", findBeer);
-againButton.addEventListener("click", beerMeAgain);
 differentBeerButton.addEventListener("click", showDifferentBeer);
 differentPlaceButton.addEventListener("click", showDifferentPlace);
 directionsButton.addEventListener("click", openDirections);
@@ -216,26 +214,6 @@ function showDifferentPlace() {
     showCurrentRecommendation();
 }
 
-function beerMeAgain() {
-    if (sortedBeerSpots.length === 0) {
-        findBeer();
-        return;
-    }
-
-    let randomIndex = currentPlaceIndex;
-
-    if (sortedBeerSpots.length > 1) {
-        while (randomIndex === currentPlaceIndex) {
-            randomIndex =
-                Math.floor(Math.random() * sortedBeerSpots.length);
-        }
-    }
-
-    currentPlaceIndex = randomIndex;
-    currentBeerIndex = 0;
-
-    showCurrentRecommendation();
-}
 
 function openDirections() {
     const currentSpot = sortedBeerSpots[currentPlaceIndex];
