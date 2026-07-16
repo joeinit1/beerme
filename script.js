@@ -1,135 +1,61 @@
-const beerBtn=document.getElementById("beerBtn");
+const beerButton = document.getElementById("beerBtn");
+const loading = document.getElementById("loading");
+const result = document.getElementById("result");
 
-const result=document.getElementById("result");
+const breweryName = document.getElementById("breweryName");
+const distance = document.getElementById("distance");
+const beerName = document.getElementById("beerName");
 
-const brewery=document.getElementById("brewery");
+beerButton.addEventListener("click", () => {
+    beerButton.classList.add("hidden");
+    document.querySelector(".tagline").classList.add("hidden");
 
-const distance=document.getElementById("distance");
+    loading.classList.remove("hidden");
 
-const beer=document.getElementById("beer");
-
-const beerSuggestions={
-
-"Bissell Brothers Brewing":[
-"Substance IPA",
-"Swish",
-"Lux Lager"
-],
-
-"Allagash Brewing Company":[
-"Allagash White",
-"Curieux",
-"Tripel"
-],
-
-"Foundation Brewing Company":[
-"Epiphany IPA",
-"Burnside",
-"Afterglow"
-]
-
-};
-
-let breweries=[];
-
-let current=0;
-
-beerBtn.onclick=()=>{
-
-navigator.geolocation.getCurrentPosition(loadBreweries);
-
-};
-
-async function loadBreweries(position){
-
-const lat=position.coords.latitude;
-
-const lon=position.coords.longitude;
-
-const query=`
-
-[out:json];
-
-(
-
-node(around:15000,${lat},${lon})["craft"="brewery"];
-
-way(around:15000,${lat},${lon})["craft"="brewery"];
-
-);
-
-out center;
-
-`;
-
-const url="https://overpass-api.de/api/interpreter";
-
-const response=await fetch(url,{
-
-method:"POST",
-
-body:query
-
+    navigator.geolocation.getCurrentPosition(
+        locationSuccess,
+        locationError,
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 60000
+        }
+    );
 });
 
-const data=await response.json();
+function locationSuccess(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
 
-breweries=data.elements;
+    console.log("Latitude:", latitude);
+    console.log("Longitude:", longitude);
 
-pickRandom();
+    // Temporary prototype result
+    setTimeout(() => {
+        loading.classList.add("hidden");
 
+        breweryName.textContent = "Your Nearest Beer Spot";
+        distance.textContent = "Location found";
+        beerName.textContent = "Ask for the local favorite.";
+
+        result.classList.remove("hidden");
+    }, 1200);
 }
 
-function pickRandom(){
+function locationError(error) {
+    loading.classList.add("hidden");
+    beerButton.classList.remove("hidden");
+    document.querySelector(".tagline").classList.remove("hidden");
 
-if(breweries.length===0){
+    let message = "We couldn't get your location.";
 
-brewery.innerText="No breweries nearby.";
+    if (error.code === error.PERMISSION_DENIED) {
+        message = "Please allow location access so we can find beer nearby.";
+    } else if (error.code === error.POSITION_UNAVAILABLE) {
+        message = "Your location is currently unavailable.";
+    } else if (error.code === error.TIMEOUT) {
+        message = "Getting your location took too long. Please try again.";
+    }
 
-result.classList.remove("hidden");
-
-return;
-
+    alert(message);
 }
-
-current=Math.floor(Math.random()*breweries.length);
-
-showResult();
-
-}
-
-function showResult(){
-
-const b=breweries[current];
-
-const name=b.tags.name||"Unknown Brewery";
-
-brewery.innerText=name;
-
-distance.innerText="Nearby";
-
-const beers=beerSuggestions[name]||
-
-["Ask for the bartender's favorite beer!"];
-
-beer.innerText=beers[0];
-
-result.classList.remove("hidden");
-
-}
-
-document.getElementById("again").onclick=pickRandom;
-
-document.getElementById("differentPlace").onclick=pickRandom;
-
-document.getElementById("differentBeer").onclick=()=>{
-
-const name=brewery.innerText;
-
-const beers=beerSuggestions[name];
-
-if(!beers)return;
-
-beer.innerText=beers[Math.floor(Math.random()*beers.length)];
-
-};
