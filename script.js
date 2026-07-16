@@ -30,7 +30,7 @@ const beerSpots = [
             "Curieux",
             "Allagash Lager",
             "North Sky",
-            "Honey Saison"
+            "Honey Saison",
             "Allagash Saison",
             "Allagash Black",
             "Maine Blueberry Ale",
