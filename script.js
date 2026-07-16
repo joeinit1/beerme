@@ -30,10 +30,12 @@ const beerSpots = [
             "Curieux",
             "Allagash Lager",
             "North Sky",
-            "Honey Saison",
-            "Saison",
+            "Honey Saison"
+            "Allagash Saison",
+            "Allagash Black",
             "Maine Blueberry Ale",
-            "Clementine Kölsch"
+            "Clementine Kölsch",
+            "Kickabout Lager"
         ]
     },
     {
@@ -46,8 +48,7 @@ const beerSpots = [
             "Try a hazy Maine IPA",
             "Try a double-fruited sour",
             "Try a crispy lager",
-            "Try a pastry stout",
-            "Ask for the new release"
+            "Ask for the freshest release"
         ]
     },
     {
@@ -57,13 +58,11 @@ const beerSpots = [
         longitude: -70.3207,
         beers: [
             "Epiphany",
-            "Raspberry's My Jam",
-            "Fetch",
-            "Vienna Lager",
+            "Afterglow",
+            "Riverton Flyer",
             "Forest City",
             "Tailwind IPA",
-            "Afterglow",
-            "Riverton Flyer"
+            "Vienna Lager"
         ]
     },
     {
@@ -76,8 +75,85 @@ const beerSpots = [
             "Paseo",
             "Austin Street Lager",
             "Try the house IPA",
-            "Try a seasonal sour",
-            "Ask for the new release"
+            "Ask for the newest release"
+        ]
+    },
+    {
+        name: "Bissell Brothers Brewing Company",
+        address: "38 Resurgam Place, Portland, ME 04102",
+        latitude: 43.6518,
+        longitude: -70.2915,
+        beers: [
+            "The Substance Ale",
+            "Swish",
+            "Nothing Gold",
+            "Lux",
+            "Precept",
+            "Bissell Black"
+        ]
+    },
+    {
+        name: "Belleflower Brewing Company",
+        address: "66 Cove Street, Portland, ME 04101",
+        latitude: 43.6700,
+        longitude: -70.2560,
+        beers: [
+            "Try the flagship IPA",
+            "Try a rotating pale ale",
+            "Try a seasonal lager",
+            "Try the freshest farmhouse ale",
+            "Ask for the brewer's pick"
+        ]
+    },
+    {
+        name: "Rising Tide Brewing Company",
+        address: "103 Fox Street, Portland, ME 04101",
+        latitude: 43.6690,
+        longitude: -70.2543,
+        beers: [
+            "Ishmael",
+            "Daymark",
+            "Mountainside",
+            "Back Cove",
+            "Try a seasonal lager"
+        ]
+    },
+    {
+        name: "Lone Pine Brewing Company",
+        address: "219 Anderson Street, Portland, ME 04101",
+        latitude: 43.6717,
+        longitude: -70.2549,
+        beers: [
+            "Portland Pale Ale",
+            "Brightside IPA",
+            "Oh-J",
+            "Chaos Emeralds",
+            "Try the latest seasonal release"
+        ]
+    },
+    {
+        name: "Shipyard Brewing Company",
+        address: "27 Hancock Street, Portland, ME 04101",
+        latitude: 43.6629,
+        longitude: -70.2482,
+        beers: [
+            "Export Ale",
+            "Pumpkinhead",
+            "Finder",
+            "American Pale Ale",
+            "Ask for the freshest Shipyard release"
+        ]
+    },
+    {
+        name: "Orange Bike Brewing Company",
+        address: "31 Diamond Street, Suite D, Portland, ME 04101",
+        latitude: 43.6679,
+        longitude: -70.2596,
+        beers: [
+            "Try the gluten-free IPA",
+            "Try the gluten-free lager",
+            "Try the seasonal release",
+            "Ask for the taproom favorite"
         ]
     }
 ];
