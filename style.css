@@ -90,6 +90,9 @@ body {
     color: #347064;
     margin: 12px 0 28px;
     line-height: 1.1;
+
+    width: 100%;
+    white-space: nowrap;
 }
 
 .beerCard h3 {
