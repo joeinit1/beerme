@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍺 Beer Me</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🍺</div>
+
+    <h1>BEER ME</h1>
+
+    <p class="tagline">
+        One tap.<br>
+        One beer.<br>
+        One destination.
+    </p>
+
+    <button id="beerBtn">
+        BEER ME
+    </button>
+
+    <div id="loading" class="hidden">
+
+        <div class="spinner"></div>
+
+        <p>Finding beer...</p>
+
+    </div>
+
+    <div id="result" class="hidden">
+
+        <h2 id="breweryName"></h2>
+
+        <p id="distance"></p>
+
+        <div class="beerCard">
+
+            <h3>🍺 Recommended Beer</h3>
+
+            <p id="beerName"></p>
+
+        </div>
+
+        <div class="buttonGroup">
+
+            <button id="againBtn">
+                🍺 Beer Me Again
+            </button>
+
+            <button id="differentBeerBtn">
+                🍻 Different Beer
+            </button>
+
+            <button id="differentPlaceBtn">
+                🚗 Somewhere Else
+            </button>
+
+            <button id="directionsBtn">
+                📍 Directions
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
